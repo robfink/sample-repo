@@ -4,11 +4,14 @@ var crossfilter_array8 = crossfilter_arrayUntyped,
     crossfilter_arrayLengthen = crossfilter_arrayLengthenUntyped,
     crossfilter_arrayWiden = crossfilter_arrayWidenUntyped;
 
+// I made this change here
 if (typeof Uint8Array !== "undefined") {
   crossfilter_array8 = function(n) { return new Uint8Array(n); };
   crossfilter_array16 = function(n) { return new Uint16Array(n); };
   crossfilter_array32 = function(n) { return new Uint32Array(n); };
 
+    var myVar = 2; // I made this change
+    
   crossfilter_arrayLengthen = function(array, length) {
     if (array.length >= length) return array;
     var copy = new array.constructor(length);
